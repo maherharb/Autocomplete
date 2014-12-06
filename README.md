@@ -25,3 +25,7 @@ This rep contains an n-gram language model that predicts the next word, given a 
 * **www\jquery-ui.css**: The css stylesheet for the jQuery-ui auto-complete widget, downloaded from http://jqueryui.com/download/.
 
 * **www\images\**: Some other dependencies for the jQuery-ui auto-complete widget.
+
+### Screenshot of working application
+
+![auto-complete](http://github.com/mharb75/Autocomplete/screenshot.png)
