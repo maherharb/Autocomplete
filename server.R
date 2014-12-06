@@ -1,7 +1,3 @@
-# setwd('C:/Users/Maher/Dropbox/Education/Data Science/capstone/Autocomplete/')
-
-
-
 
 library(shiny)
 library(RWeka)
