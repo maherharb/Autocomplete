@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Next Word Prediction</title>
+  
+  <script src="shared/jquery.js" type="text/javascript"></script>
+  <script src="shared/shiny.js" type="text/javascript"></script>
+  <script src="jquery-ui.min.js"></script>
+    
+  <link rel="stylesheet" type="text/css" href="shared/shiny.css" /> 
+  <link rel="stylesheet" type="text/css" href="jquery-ui.css" />
+    
+  
+    <script>
+  
+  
+       Shiny.addCustomMessageHandler("myCallbackHandler",
+          function(availableTags) {
+
+    function split( val ) {
+      return val.split( /\s+/ );
+    }
+    function extractLast( term ) {
+      return split( term ).pop();
+    }
+
+    $('[name=phrase]')
+      // don't navigate away from the field on tab when selecting an item
+      .bind( "keydown", function( event ) {
+        if ( event.keyCode === $.ui.keyCode.TAB &&
+            $( this ).autocomplete( "instance" ).menu.active ) {
+          event.preventDefault();
+        }
+      })
+      .autocomplete({
+        minLength: 0,
+        source: function( request, response ) {
+          // delegate back to autocomplete, but extract the last term
+          response( $.ui.autocomplete.filter(
+            availableTags, extractLast( request.term ) ) );
+        },
+        focus: function() {
+          // prevent value inserted on focus
+          return false;
+        },
+        select: function( event, ui ) {
+          var terms = split( this.value );
+          // remove the current input
+          terms.pop();
+          // add the selected item
+          terms.push( ui.item.value );
+          // add placeholder to get the comma-and-space at the end
+          terms.push( "" );
+          this.value = terms.join( " " );
+          return false;
+        }
+      }).autocomplete("search","");
+  });
+
+
+
+  </script>
+</head>
+<body>
+
+ <STYLE type="text/css">
+  body { font-family: "Trebuchet MS", "Helvetica", "Arial",  "Verdana", "sans-serif"; font-size: 75%; }
+ </STYLE>
+ 
+ 
+ <H2>Auto-complete </H2>
+<div class="ui-widget">
+  <label>Type here: </label>
+  <input type="text" name="phrase" value="" size="60" />
+</div>
+   <div id="table" class="shiny-html-output"></div>
+<pre id="time" class="shiny-text-output"></pre> 
+  
+</body>
+</html>
