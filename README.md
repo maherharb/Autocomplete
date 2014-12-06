@@ -28,4 +28,5 @@ This rep contains an n-gram language model that predicts the next word, given a 
 
 ### Screenshot of working application
 
-![auto-complete](http://github.com/mharb75/Autocomplete/screenshot.png)
+![auto-complete](../blob/master/Autocomplete/screenshot.png?raw=true)
+
