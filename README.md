@@ -26,7 +26,13 @@ This rep contains an n-gram language model that predicts the next word, given a 
 
 * **www\images\**: Some other dependencies for the jQuery-ui auto-complete widget.
 
+* **screenshot.png**: Screenshot of working application in chrome browser.
+
 ### Screenshot of working application
 
 ![auto-complete](screenshot.png?raw=true)
 
+### References
+
+More on the methodology of constructing the n-grams can be found here:
+[https://rpubs.com/mharb75/40666](https://rpubs.com/mharb75/40666)
