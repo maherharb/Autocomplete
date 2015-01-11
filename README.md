@@ -36,3 +36,6 @@ This rep contains an n-gram language model that predicts the next word, given a 
 
 More on the methodology of constructing the n-grams can be found here:
 [https://rpubs.com/mharb75/40666](https://rpubs.com/mharb75/40666)
+
+The live application is hosted on shinyapps.io:
+[https://mharb.shinyapps.io/Autocomplete04/](https://mharb.shinyapps.io/Autocomplete04/)
